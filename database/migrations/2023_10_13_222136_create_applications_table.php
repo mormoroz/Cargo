@@ -13,9 +13,25 @@ return new class extends Migration
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('Application_status_type_id')
+            $table->foreignId('application_status_type_id')
                 ->references('id')->on('cargo_type')
                 ->onDelete('cascade');
+            $table->foreignId('employee_id')
+                ->nullable()
+                ->references('id')->on('employee')
+                ->onDelete('cascade');
+            $table->foreignId('company_id')
+                ->references('id')->on('company')
+                ->onDelete('cascade');
+            $table->foreignId('customer_id')
+                ->references('id')->on('customer')
+                ->onDelete('cascade');
+            $table->foreignId('cargo_id')
+                ->references('id')->on('cargo')
+                ->onDelete('cascade');
+            $table->string('start_point');
+            $table->string('end_point');
+
             $table->timestamps();
         });
     }

@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('contractors', function (Blueprint $table) {
             $table->id();
+            $table->string('INN', 10);
+            $table->string('name');
+            $table->string('address');
+            $table->foreignId('company_type_id')
+                ->references('id')->on('company_type')
+                ->onDelete('cascade');
+            $table->foreignId('company_country_id')
+                ->references('id')->on('company_country')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

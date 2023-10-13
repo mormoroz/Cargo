@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('application_status_types', function (Blueprint $table) {
+        Schema::create('sub_supply_chain_statuses', function (Blueprint $table) {
             $table->id();
-            $table->string('application_status_name');
+            $table->string('sub_supply_chain_status_name');
             $table->timestamps();
         });
     }
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('application_status_types');
+        Schema::dropIfExists('sub_supply_chain_statuses');
     }
 };
