@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('cargos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('cargo_type_id')
-                ->references('id')->on('cargo_type')
+                ->references('id')->on('cargo_types')
                 ->onDelete('cascade');
             $table->float('weight');
             $table->float('width');

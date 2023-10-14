@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
             $table->foreignId('company_id')
-                ->references('id')->on('company')
+                ->references('id')->on('companies')
                 ->onDelete('cascade');
             $table->string('first_name');
             $table->string('last_name');
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone_number');
             $table->foreignId('role_type_id')
-                ->references('id')->on('role_type')
+                ->references('id')->on('role_types')
                 ->onDelete('cascade');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

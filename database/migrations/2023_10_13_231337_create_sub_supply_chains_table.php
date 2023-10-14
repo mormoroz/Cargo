@@ -14,21 +14,21 @@ return new class extends Migration
         Schema::create('sub_supply_chains', function (Blueprint $table) {
             $table->id();
             $table->foreignId('supply_chain_id')
-                ->references('id')->on('supply_chain')
+                ->references('id')->on('supply_chains')
                 ->onDelete('cascade');
             $table->string('start_point');
             $table->string('end_point');
             $table->foreignId('delivery_type_id')
-                ->references('id')->on('delivery_type')
+                ->references('id')->on('delivery_types')
                 ->onDelete('cascade');
             $table->foreignId('contractor_id')
-                ->references('id')->on('contractor')
+                ->references('id')->on('contractors')
                 ->onDelete('cascade');
             $table->integer('sequence_number');
             $table->dateTime('expected_time_end');
             $table->dateTime('real_time_end');
             $table->foreignId('sub_supply_chain_status_id')
-                ->references('id')->on('sub_supply_chain_status')
+                ->references('id')->on('sub_supply_chain_statuses')
                 ->onDelete('cascade');
             $table->timestamps();
         });

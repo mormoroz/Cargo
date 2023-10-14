@@ -14,16 +14,16 @@ return new class extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
             $table->foreignId('main_user_id')
-                ->references('id')->on('main_user')
+                ->references('id')->on('main_users')
                 ->onDelete('cascade');
             $table->string('INN', 10);
             $table->string('name');
             $table->string('address');
             $table->foreignId('company_type_id')
-                ->references('id')->on('company_type')
+                ->references('id')->on('company_types')
                 ->onDelete('cascade');
-            $table->foreignId('registration_county_id')
-                ->references('id')->on('registration_county')
+            $table->foreignId('company_country_id')
+                ->references('id')->on('company_countries')
                 ->onDelete('cascade');
             $table->timestamps();
         });

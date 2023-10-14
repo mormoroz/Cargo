@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('address');
             $table->foreignId('company_type_id')
-                ->references('id')->on('company_type')
+                ->references('id')->on('company_types')
                 ->onDelete('cascade');
             $table->foreignId('company_country_id')
-                ->references('id')->on('company_country')
+                ->references('id')->on('company_countries')
                 ->onDelete('cascade');
             $table->timestamps();
         });

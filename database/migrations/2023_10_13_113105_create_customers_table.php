@@ -21,10 +21,10 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->foreignId('company_country_id')
-                ->references('id')->on('company_country')
+                ->references('id')->on('company_countries')
                 ->onDelete('cascade');
-            $table->foreignId('customer_type_id')
-                ->references('id')->on('customer_type')
+            $table->foreignId('company_type_id')
+                ->references('id')->on('company_types')
                 ->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();

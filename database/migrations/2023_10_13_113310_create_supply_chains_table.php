@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('supply_chains', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('delivery_id')
-                ->references('id')->on('delivery')
+            $table->foreignId('application_id')
+                ->references('id')->on('applications')
                 ->onDelete('cascade');
             $table->timestamps();
         });
