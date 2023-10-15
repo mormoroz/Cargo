@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('registration');
 });
 
 Route::get('/home', [MainUserController::class, 'home']);
