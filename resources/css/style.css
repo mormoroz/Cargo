@@ -1,0 +1,54 @@
+:root{
+    --transition: all 0.15s ease-in-out;
+}
+
+.required_label {
+    position: relative;
+}
+
+.required_label::after{
+    content: '*';
+    position: absolute;
+    color: red;
+    left: 100%;
+    padding-left: 5px;
+}
+
+.w-350{
+    width: 350px;
+    max-width: 100%;
+}
+
+.w-400{
+    width: 400px;
+    max-width: 100%;
+}
+
+.pages_links{
+
+}
+
+
+.pages_links .page{
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+
+.pages_links .page:hover{
+    background-color: #3a49b6;
+    color: white;
+}
+
+.pages_links .page i{
+    min-width: 30px;
+}
+
+.pages_links .page:hover i{
+    color: white;
+}
+
+.main_content{
+    overflow: auto;
+}
