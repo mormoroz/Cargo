@@ -25,6 +25,17 @@ Route::get('/registration', [MainUserController::class, 'create']);
 
 Route::get('/login', [MainUserController::class, 'login'])->name('login')->middleware('guest');
 
+Route::get('/delivery', function () {
+    return view('delivery');
+});
+
+Route::get('/agents', function () {
+    return view('agents');
+});
+
+Route::get('/application', function () {
+    return view('application');
+});
 
 Route::post('/main_users/authenticate', [MainUserController::class, 'authenticate']);
 
@@ -33,4 +44,3 @@ Route::post('/main_users', [MainUserController::class, 'store']);
 
 
 Route::post('/users/authenticate', [MainUserController::class, 'authenticate']);
-

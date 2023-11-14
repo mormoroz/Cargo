@@ -14,6 +14,7 @@
 
 <div class="bg-white p-8 rounded-lg shadow-lg w-400">
     <h1 class="text-2xl font-bold text-black mb-4 text-center">Регистрация</h1>
+    <h2><a class="login" id="login" href="/login">Eсть аккаунт?</a></h2>
     <form method="post" action="/main_users" class="register-form" id="register-form">
         @csrf
         @if($errors->any())

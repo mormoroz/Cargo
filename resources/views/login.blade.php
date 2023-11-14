@@ -16,6 +16,8 @@
 
 <div class="bg-white p-8 rounded-lg shadow-lg w-400">
     <h1 class="text-2xl font-bold text-black mb-4 text-center">Авторизация</h1>
+    <h2><a class="registration" id="registration" href="/registration">Зарегистрироваться?</a></h2>
+
     <form method="post" action="/main_users/authenticate" class="login-form" id="login-form">
         @csrf
         @if($errors->any())
